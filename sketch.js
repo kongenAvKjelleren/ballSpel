@@ -21,6 +21,8 @@ let ballY = 0;
 let ballStorleik = 100;
 let xHastigheit = 2;
 let xRetning = -1;
+let yHastigheit = 1;
+let yRetning = 1;
 let poeng = 0;
 
 function
@@ -42,10 +44,17 @@ ball() {
   ellipse(ballX, ballY, ballStorleik);
   
   ballX += xHastigheit * xRetning;
+  ballY += yHastigheit * yRetning;
+  
   if(ballX <= 0 - ballStorleik/2)
     ballX = windowWidth + ballStorleik/2;
   else if (ballX >= windowWidth + ballStorleik/2)
     ballX = 0 - ballStorleik/2;
+  
+  if(ballY <= 0 + ballStorleik/2)
+    yRetning *= -1;
+  else if (ballY >= windowHeight - ballStorleik/2)
+    yRetning *= -1;
   
 }
 
@@ -56,11 +65,14 @@ mouseReleased()
   
   if(avstandBall < ballStorleik/2) {
     xRetning *= -1;
+    yRetning *= -1;
     xHastigheit += 1;
+    yHastigheit += 1;
       poeng++;
   }
   else if (avstandBall > ballStorleik/2 && xHastigheit != 0)
     xHastigheit -= 1;
+    yHastigheit -= 1;
     
 }
 
