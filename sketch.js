@@ -68,9 +68,9 @@ mouseReleased()
     yRetning *= -1;
     xHastigheit += 1;
     yHastigheit += 1;
-      poeng++;
+    poeng++;
   }
-  else if (avstandBall > ballStorleik/2 && xHastigheit != 0)
+  else if (avstandBall > ballStorleik/2 && xHastigheit != 0 && yHastigheit != 0)
     xHastigheit -= 1;
     yHastigheit -= 1;
     
