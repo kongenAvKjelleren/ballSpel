@@ -57,6 +57,7 @@ mouseReleased()
   if(avstandBall < ballStorleik/2) {
     xRetning *= -1;
     xHastigheit += 1;
+    poeng++;
   }
   else if (avstandBall > ballStorleik/2 && xHastigheit != 0)
     xHastigheit -= 1;
